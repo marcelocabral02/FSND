@@ -147,16 +147,23 @@ def gconnect():
     login_session['email'] = data['email']
 
     print 'User email is: ' + str(login_session['email'])
-    user_id = getUserID(login_session['email'])
-    if user_id:
-        print 'Existing user #' + str(user_id) + ' matches this email.'
+#    user_id = getUserID(login_session['email'])
+#    if user_id:
+#        print 'Existing user #' + str(user_id) + ' matches this email.'
+#    else:
+#        user_id = createUser(login_session)
+#        print 'New user id #' + str(user_id) + ' created.'
+#        if user_id is None:
+#            print 'A new user could not be created.'
+#    login_session['user_id'] = user_id
+#    print 'Login session is tied to: id #' + str(login_session['user_id'])
+
+    user = getUser(login_session['email'])
+    if user:
+        user_id = user.id
     else:
         user_id = createUser(login_session)
-        print 'New user id #' + str(user_id) + ' created.'
-        if user_id is None:
-            print 'A new user could not be created.'
     login_session['user_id'] = user_id
-    print 'Login session is tied to: id #' + str(login_session['user_id'])
 
     output = ''
     output += '<h2>Welcome, '
@@ -253,16 +260,20 @@ def createUser(login_session):
     return user.id
 
 
-def getUserInfo(user_id):
-    user = session.query(User).filter_by(id=user_id).first()
-    return user.id
+#def getUserInfo(user_id):
+#    user = session.query(User).filter_by(id=user_id).first()
+#    return user.id
 
 
-def getUserID(user_id):
-    user = session.query(User).filter_by(id=user_id).first()
+#def getUserID(user_id):
+#    user = session.query(User).filter_by(id=user_id).first()
 #    user = session.query(User).filter_by(email=email).one_or_none()
-    return user.id
+#    return user.id
 
+
+def getUser(user_email):
+   user = session.query(User).filter_by(email=user_email).first()
+   return user
 
 def new_state():
     state = ''.join(random.choice(string.ascii_uppercase +
