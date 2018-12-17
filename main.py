@@ -260,20 +260,21 @@ def createUser(login_session):
     return user.id
 
 
-#def getUserInfo(user_id):
+# def getUserInfo(user_id):
 #    user = session.query(User).filter_by(id=user_id).first()
 #    return user.id
 
 
-#def getUserID(user_id):
+# def getUserID(user_id):
 #    user = session.query(User).filter_by(id=user_id).first()
 #    user = session.query(User).filter_by(email=email).one_or_none()
 #    return user.id
 
 
 def getUser(user_email):
-   user = session.query(User).filter_by(email=user_email).first()
-   return user
+    user = session.query(User).filter_by(email=user_email).first()
+    return user
+
 
 def new_state():
     state = ''.join(random.choice(string.ascii_uppercase +
