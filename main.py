@@ -425,20 +425,20 @@ def editDetails(category, spareId):
 
         if 'provider' in login_session and login_session['provider'] \
                 != 'null':
-            spare = request.form['spare']
+            spare_name = request.form['spare']
             manufacturer = request.form['manufacturer']
             unit = request.form['Description']
             description = request.form['Description']
             category = request.form['category']
             user_id = check_user().id
             admin_id = check_admin().id
-
             # check if spare owner is same as logged in user or admin or not
-
+            
             if spare.user_id == user_id or user_id == admin_id:
                 if spare and manufacturer and unit and description \
                         and category:
-                    spare.spare = spare
+                    spare.Name = spare
+                    print spare
                     spare.manufacturer = manufacturer
                     spare.unit = unit
                     description = description.replace('\n', '<br>')
@@ -446,7 +446,7 @@ def editDetails(category, spareId):
                     spare.category = category
                     session.add(spare)
                     session.commit()
-                    return redirect(url_for('spare'))
+                    return redirect(url_for('newspare'))
                 else:
                     state = new_state()
                     return render_template(
@@ -592,4 +592,4 @@ def spareJSON(category, spareId):
 
 if __name__ == '__main__':
     app.debug = True
-    app.run(host='0.0.0.0', port=5000)
+    app.run(host='52.201.88.152', port=80)
