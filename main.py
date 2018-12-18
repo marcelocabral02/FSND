@@ -432,8 +432,9 @@ def editDetails(category, spareId):
             category = request.form['category']
             user_id = check_user().id
             admin_id = check_admin().id
+
             # check if spare owner is same as logged in user or admin or not
-            
+
             if spare.user_id == user_id or user_id == admin_id:
                 if spare and manufacturer and unit and description \
                         and category:
@@ -592,4 +593,4 @@ def spareJSON(category, spareId):
 
 if __name__ == '__main__':
     app.debug = True
-    app.run(host='52.201.88.152', port=80)
+    app.run(host='0.0.0.0', port=5000)
