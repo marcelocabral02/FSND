@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block content%}
+<div class="mdl-grid mdl-shadow--2dp form-grid mdl-color--white margin-top-10">
+        <form action="{{url_for('editDetails', category = spare.category, spareId = spare.id)}}" class="item-form" method="post" id="spareForm">
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label input-field-text margin-top-5">
+            <input class="mdl-textfield__input" type="text" name="spare" value="{{spare.spare}}" id="spare">
+            <label class="mdl-textfield__label" for="spare">spare</label>
+          </div>
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label input-field-text">
+            <input class="mdl-textfield__input" type="text" name="manufacturer" value="{{spare.manufacturer}}" id="manufacturer">
+            <label class="mdl-textfield__label" for="manufacturer">manufacturer</label>
+          </div>
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label input-field-text">
+            <input class="mdl-textfield__input" type="text" name="unit" value="{{spare.unit}}" id="unit">
+            <label class="mdl-textfield__label" for="unit">Image</label>
+          </div>
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label input-field-text">
+            <textarea class="mdl-textfield__input" type="text"  name="Description" id="description">{{spare.description}}</textarea>
+            <label class="mdl-textfield__label" for="Description">Description</label>
+          </div>
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label input-field-text">
+            <textarea class="mdl-textfield__input" type="text"  name="category" id="category">{{spare.category}}</textarea>
+            <label class="mdl-textfield__label" for="category">Category</label>
+          </div>
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select getmdl-select__fullwidth input-field-text">
+            <ul for="category" class="mdl-menu mdl-menu--bottom-left mdl-js-menu">
+                <li class="mdl-menu__item">Optics</li>
+                <li class="mdl-menu__item">Microwave</li>
+                <li class="mdl-menu__item">UHF</li>
+                <li class="mdl-menu__item">IP Networks</li>
+                <li class="mdl-menu__item">Satelital Networks</li>
+                     
+            </ul>
+            </div>
+
+        <br>
+        <input class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent input-button mdl-color--teal" onclick="validateDetails()" type="button" value="Edit">
+        <a class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-color--grey-300 input-button" href="{{url_for('showspares')}}">Cancel</a>
+
+      </form>
+</div>
+{% endblock %}
