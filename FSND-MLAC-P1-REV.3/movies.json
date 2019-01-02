@@ -1,0 +1,32 @@
+[
+["Vingadores",
+ "\"Marvel Studios' Avengers: Infinity War Official Trailer\"",
+ "./config/images/avengers.jpg",
+ "https://www.youtube.com/watch?v=6ZfuNTqbHE8",
+ 8.7
+ ],
+["Deadpool 2",
+ "\"Deadpool 2 | The Trailer",
+ "./config/images/deadpool.jpg",
+ "https://www.youtube.com/watch?v=D86RtevtfrA",
+ 8.1
+ ],
+["Homem Formiga e a Vespa",
+ "Marvel Studios' Ant-Man and The Wasp - Official Trailer #2",
+ "./config/images/homemformigaeavespa.jpg",
+ "https://www.youtube.com/watch?v=UUkn-enk2RU",
+ 7.5
+ ],
+["Justice League",
+ "JUSTICE LEAGUE - Official Trailer 1",
+ "./config/images/Liga_da_Justica.jpg",
+ "https://www.youtube.com/watch?v=3cxixDgHUYw",
+ 6.6
+ ],
+["Tarzan",
+ "THE LEGEND OF TARZAN - Official Trailer 2",
+ "./config/images/tarzan.jpg",
+ "https://www.youtube.com/watch?v=dLmKio67pVQ",
+ 6.3
+ ]
+]

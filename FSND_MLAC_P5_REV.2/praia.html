@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Praias Paulistas</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.indigo-pink.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dialog-polyfill/0.4.5/dialog-polyfill.min.css">
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="https://vjs.zencdn.net/7.3.0/video-js.css"> 
+</head>
+<body>
+    <div class="mdl-layout mdl-js-layout">
+        <header class="mdl-layout__header">
+            <div class="mdl-layout__header-row">
+                <span class="mdl-layout-title">Praias Paulistas</span>
+            </div>
+        </header>
+        <div class="mdl-layout__drawer">
+            <span class="mdl-layout-title">Praias Paulistas</span>
+            <form action="#" class="drawer-search-input">
+                <div class="mdl-textfield mdl-js-textfield">
+                    <input id="filter-input" class="mdl-textfield__input" type="text" data-bind="value: query, valueUpdate: 'afterkeydown'">
+                    <label class="mdl-textfield__label" for="filter-input">Praia</label>
+                </div>
+            </form>
+            <nav class="mdl-navigation" data-bind="foreach: filteredBeaches">
+              <a class="mdl-navigation__link" href="#" data-bind="text: name, click: markerSelected" ></a>
+            </nav>
+        </div>
+        <main class="mdl-layout__content" data-bind="googlemap: { beaches: beaches, centerLat: -23.9001625, centerLon: -46.253175 }"></main>
+        <dialog class="mdl-dialog">
+            <h4 class="mdl-dialog__title">Sem internet</h4>
+            <div class="mdl-dialog__content">
+                <p>Conexão em falha</p>
+            </div>
+         </dialog>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-min.js"></script>
+    <script src="https://code.getmdl.io/1.2.1/material.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dialog-polyfill/0.4.5/dialog-polyfill.min.js"></script>
+    <script src="scripts/bundle.js"></script>
+    <script src="https://vjs.zencdn.net/ie8/ie8-version/videojs-ie8.min.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA90VxnDVSUjdABrkfgM2_nQQ2mjhmFWWU&callback=initMap" onerror="mapError()"></script>
+  </body>
+</html>

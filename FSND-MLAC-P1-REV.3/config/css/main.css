@@ -1,0 +1,89 @@
+.navbar {
+  background-color: #01ad10;
+  padding: 2em 0;
+}
+.navbar .navbar-brand {
+  font-family: 'arial', serif;
+  font-size: 50px;
+  color: #ffffff;
+}
+
+.movies {
+  margin: 5em auto;
+  text-align: center;
+}
+.movies li {
+  vertical-align: top;
+}
+.movie-tile {
+  width: 300px;
+  height: auto;
+  transition: background-color 250ms;
+}
+.movie-tile:hover {
+  background-color: #01ad10;
+}
+.movie-tile:hover .movie-data{
+  display: block;
+}
+.movie-tile:hover .img-wrapper{
+  display: none;
+}
+.movie-tile:hover h3{
+  opacity: 0;
+}
+.movie-tile h3 {
+  font-family: 'Slabo 27px', serif;
+}
+.img-wrapper {
+  position: relative;
+  width: 300px;
+  height: 180px;
+}
+.movie-data{
+  width: 300px;
+  height: 180px;
+  font-family: "Bellefair";
+  font-size: 18px;
+  display: none;
+}
+.watch{
+  margin-top: 10px;
+  padding: 10px 25px;
+  background: #FFF;
+  border: none;
+}
+.watch:hover{
+  cursor: pointer;
+}
+
+#trailer .modal-dialog {
+  margin: auto;
+  margin-top: 200px;
+  width: 640px;
+  height: 480px;
+  max-width: 95%;
+}
+.hanging-close {
+  position: absolute;
+  top: 1px;
+  right: 1px;
+  z-index: 9001;
+}
+#trailer-video {
+  width: 100%;
+  height: 100%;
+}
+.scale-media {
+  padding-bottom: 56.25%;
+  position: relative;
+}
+.scale-media iframe {
+  border: none;
+  height: 100%;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 0;
+  background-color: white;
+}

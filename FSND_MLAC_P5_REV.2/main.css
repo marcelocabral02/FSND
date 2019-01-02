@@ -1,0 +1,27 @@
+.mdl-layout__content {
+     visibility: visible !important;
+     width: 100%;
+     height: 100%;
+}
+
+.demo-layout-transparent {
+    background: transparent;
+}
+
+.demo-layout-transparent .mdl-layout__header,
+.demo-layout-transparent .mdl-layout__drawer-button {
+  color: black;
+}
+
+.drawer-search-input {
+    padding: 16px;
+}
+
+.owm-link {
+    position: absolute;
+    background-color: rgba(0,0,0, 0.5);
+    padding: 2px;
+    bottom: 20px;
+    right: 50px;
+    z-index: 2;
+}
