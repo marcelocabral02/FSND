@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="mdl-grid">
+{% for spare in spares %}
+
+    <div class="demo-card-wide mdl-card mdl-shadow--16dp">
+
+        <div class="mdl-card__title brighten">
+            <img src="{{spare.unit}}" alt="spare" class="spare-img-detail" />
+            <a href="{{url_for('Detail',category = spare.category, spareId = spare.id)}}" title="{{spare.unit}}"></a>
+        </div>
+
+        <div class="mdl-card__actions mdl-card--border">
+
+            <a href="{{url_for('Detail',category = spare.category, spareId = spare.id)}}" title="{{ spare.spare }}" tabindex="-1" class="link-fade"> <span>{{ spare.spare }}</span><span class="span-fade"></span></a>
+
+            <a href="{{url_for('Detail',category = spare.category, spareId = spare.id)}}" title="{{ spare.manufacturer }}" class="manufacturer-spare">{{ spare.manufacturer }}</a>
+        </div>
+    </div>
+    {% else %}
+    <span align="center" class="no-spare-msg">{{error}}</span>
+{% endfor %}
+</div>
+{% endblock %}
