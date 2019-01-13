@@ -17,7 +17,7 @@ from oauth2client.client import FlowExchangeError
 from oauth2client.client import AccessTokenCredentials
 
 engine = create_engine(
-         'postgresql://spareparts:spareparts@localhost/spareparts', connect_args={'check_same_thread': False})
+         'postgresql://spareparts:spareparts@localhost/spareparts')
 Base.metadata.bind = engine
 DBSession = sessionmaker(bind=engine)
 session = DBSession()
