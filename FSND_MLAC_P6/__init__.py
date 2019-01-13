@@ -592,4 +592,4 @@ def spareJSON(category, spareId):
 
 if __name__ == '__main__':
     app.debug = True
-    app.run(host='172.26.2.24', port=80)
+    app.run(host='172.26.14.100', port=80)
